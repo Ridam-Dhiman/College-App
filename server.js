@@ -10,6 +10,8 @@ app.use(express.json());
 app.post("/save-user", (req, res) => {
   const user = req.body;
 
+  console.log("📥 Received Form Data:", user);
+
   fs.readFile("users.json", "utf8", (err, data) => {
     let users = [];
     if (!err && data) users = JSON.parse(data);
